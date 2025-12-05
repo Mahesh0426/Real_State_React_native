@@ -1,4 +1,6 @@
+import { Link } from "expo-router";
 import { Text, View } from "react-native";
+import "../../../global.css";
 
 export default function Index() {
   return (
@@ -9,7 +11,15 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <View className=" bg-white">
+        <Text className="text-xl font-bold text-blue-500">
+          Welcome to NativeWind!
+        </Text>
+      </View>
+      <Link href="/sign-in">Sign in</Link>
+      <Link href="/explore">Explore</Link>
+      <Link href="/profile">Profile</Link>
+      <Link href="/properties/123">Preperty</Link>
     </View>
   );
 }

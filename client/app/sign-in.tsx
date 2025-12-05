@@ -1,12 +1,12 @@
-import { Text, View } from "react-native";
+import { View, Text } from "react-native";
 import React from "react";
 
-const SignIn = () => {
+const signIn = () => {
   return (
     <View>
-      <Text>SignIn</Text>
+      <Text>Sign in</Text>
     </View>
   );
 };
 
-export default SignIn;
+export default signIn;
