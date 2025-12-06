@@ -12,8 +12,8 @@ export default function Index() {
       }}
     >
       <View className=" bg-white">
-        <Text className="text-xl font-bold text-blue-500">
-          Welcome to NativeWind!
+        <Text className="text-3xl font-bold text-blue-500">
+          Welcome to realstate app!
         </Text>
       </View>
       <Link href="/sign-in">Sign in</Link>
