@@ -16,10 +16,6 @@ export default function Index() {
           Welcome to realstate app!
         </Text>
       </View>
-      <Link href="/sign-in">Sign in</Link>
-      <Link href="/explore">Explore</Link>
-      <Link href="/profile">Profile</Link>
-      <Link href="/properties/123">Preperty</Link>
     </View>
   );
 }

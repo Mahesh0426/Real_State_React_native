@@ -1,5 +1,4 @@
 import React, { createContext, useContext, ReactNode } from "react";
-
 import { getCurrentUser } from "./appwrite";
 import { useAppwrite } from "./useAppwrite";
 
@@ -50,6 +49,7 @@ export const GlobalProvider = ({ children }: GlobalProviderProps) => {
     </GlobalContext.Provider>
   );
 };
+
 // Custom hook to access global context from any component
 export const useGlobalContext = (): GlobalContextType => {
   const context = useContext(GlobalContext);
