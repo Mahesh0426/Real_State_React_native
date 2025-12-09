@@ -10,7 +10,6 @@ import {
 } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-// eslint-disable-next-line import/no-unresolved
 import icons from "@/constants/icons";
 import images from "@/constants/images";
 import { settings } from "@/constants/data";

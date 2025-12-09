@@ -1,9 +1,11 @@
+/* eslint-disable import/no-unresolved */
 import { Stack } from "expo-router";
 import "../global.css";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
 import * as SplashScreen from "expo-splash-screen";
 import GlobalProvider from "@/lib/global-provider";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
@@ -26,8 +28,10 @@ export default function RootLayout() {
   }
 
   return (
-    <GlobalProvider>
-      <Stack screenOptions={{ headerShown: false }} />
-    </GlobalProvider>
+    <SafeAreaProvider>
+      <GlobalProvider>
+        <Stack screenOptions={{ headerShown: false }} />
+      </GlobalProvider>
+    </SafeAreaProvider>
   );
 }
