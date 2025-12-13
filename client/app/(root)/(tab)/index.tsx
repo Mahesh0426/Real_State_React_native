@@ -68,10 +68,10 @@ export default function Index() {
       </View>
 
       {/* Featured Section */}
-      <FeaturedCard />
+      <FeaturedCard onPress={() => {}} />
 
       {/* Popular Section */}
-      <PopularCard />
+      <PopularCard onPress={() => {}} />
     </SafeAreaView>
   );
 }
