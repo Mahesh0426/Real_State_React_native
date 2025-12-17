@@ -1,5 +1,12 @@
 /* eslint-disable import/no-unresolved */
-import { Text, View, Image, TouchableOpacity, FlatList } from "react-native";
+import {
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  FlatList,
+  Button,
+} from "react-native";
 import "../../../global.css";
 import { SafeAreaView } from "react-native-safe-area-context";
 import images from "@/constants/images";
@@ -7,10 +14,14 @@ import icons from "@/constants/icons";
 import Search from "@/components/Search";
 import { FeaturedCard, PopularCard } from "@/components/Cards";
 import Filters from "@/components/Filters";
+import { useGlobalContext } from "@/lib/global-provider";
+import Seed from "../../../lib/seed";
 
 export default function Index() {
+  const { user } = useGlobalContext();
   return (
     <SafeAreaView className="bg-white h-full">
+      <Button title="Seed" onPress={Seed} />
       <FlatList
         data={[1, 2, 3, 4]}
         renderItem={({ item }) => <PopularCard onPress={() => {}} />}
@@ -29,7 +40,7 @@ export default function Index() {
                   <View className="relative">
                     <View className="absolute inset-0 bg-primary-300 rounded-full opacity-20 blur-xl" />
                     <Image
-                      source={images.avatar}
+                      source={user?.avatar || images.avatar}
                       className="size-14 rounded-full border-2 border-primary-100"
                     />
                   </View>
@@ -40,7 +51,7 @@ export default function Index() {
                       Good Morning 👋
                     </Text>
                     <Text className="text-lg font-rubik-bold text-black-300">
-                      Mahesh Kumar
+                      {user?.name}
                     </Text>
                   </View>
                 </View>
