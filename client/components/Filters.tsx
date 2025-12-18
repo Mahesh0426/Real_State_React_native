@@ -29,16 +29,16 @@ const Filters = () => {
     >
       {categories.map((item, index) => (
         <TouchableOpacity
-          onPress={() => handleCategory(item.title)}
+          onPress={() => handleCategory(item.category)}
           key={index}
           className={`flex flex-col items-center justify-center mr-4 px-4 py-2 rounded-full  ${
-            selectedCategory === item.title
+            selectedCategory === item.category
               ? "bg-primary-300 "
               : "bg-primary-200 border border-primary-200 text-black-300"
           } `}
         >
           <Text
-            className={`text-sm ${selectedCategory === item.title ? "font-rubik-bold text-white text-center" : "text-black-300 mt-0.5"}`}
+            className={`text-sm ${selectedCategory === item.category ? "font-rubik-bold text-white text-center" : "text-black-300 mt-0.5"}`}
           >
             {item.title}
           </Text>

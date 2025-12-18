@@ -17,17 +17,18 @@ const Search = () => {
   //handle search function
   const handleSearch = (text: string) => {
     setSearch(text);
+    debouncedSearch(text);
   };
 
   return (
     <View className="flex flex-row items-center justify-between w-full px-4 py-2 mt-5 rounded-lg border border-primary-100">
       <View className=" items-center flex-1 flex-row justify-start z-50">
-        <Image source={icons.search} className="size-5" />
+        <Image source={icons.search} className="size-5 pt-1" />
         <TextInput
           placeholder="Search for anything"
           value={search}
           onChangeText={handleSearch}
-          className="text-lg font-rubik-medium text-green-900 flex-1 ml-2"
+          className="text-lg font-rubik-medium text-green-900 flex-1 ml-2 "
           placeholderTextColor="#9CA3AF"
         />
       </View>

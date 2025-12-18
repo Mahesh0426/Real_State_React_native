@@ -144,8 +144,8 @@ async function seed() {
       const assignedReviews = getRandomSubset(reviews, 5, 7); // 5 to 7 reviews
       const assignedGalleries = getRandomSubset(galleries, 3, 8); // 3 to 8 galleries
 
-      const selectedFacilities =
-        facilities[Math.floor(Math.random() * facilities.length)];
+      // Select multiple facilities (1 to 3 facilities per property)
+      const selectedFacilities = getRandomSubset(facilities, 1, 3);
 
       const image =
         propertiesImages.length - 1 >= i
@@ -169,7 +169,7 @@ async function seed() {
           bedrooms: Math.floor(Math.random() * 5) + 1,
           bathrooms: Math.floor(Math.random() * 5) + 1,
           rating: Math.floor(Math.random() * 5) + 1,
-          facilities: selectedFacilities,
+          facilities: selectedFacilities, // Array of facility strings
           image: image,
           agent: assignedAgent.$id,
           reviews: assignedReviews.map((review) => review.$id),
